@@ -1,0 +1,22 @@
+﻿@{
+    @model WebMVC.Utilities.Result<TodoViewModel> ;
+
+}
+
+<div class="text-center">
+    @if (Model.IsSuccess)
+    {
+      <ul>
+        <li style="list-style: none;">
+          <p>
+                    @Model.Value.Title @Html.CheckBox("isActive", Model.Value.Completed)
+          </p>
+        </li>
+      </ul>
+    }
+    else
+    {
+      <p>@Model.Error.Message</p>
+    }
+</div>
+
